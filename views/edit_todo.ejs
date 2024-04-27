@@ -1,0 +1,18 @@
+
+<%- include('main_features/head') %>
+
+    <form action="/web/todo-update" method="post" class="m-5 p-5">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" value="<%= todo.title %>" class="form-control" id="title" placeholder="Enter title">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" class="form-control" id="description" rows="3"><%= todo.description %></textarea>
+            <input type="hidden" name="id" value="<%= todo._id %>">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+<%- include('main_features/footer') %>
+

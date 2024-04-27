@@ -1,0 +1,25 @@
+
+<%- include('main_features/head') %>
+
+    <form action="/web/todo" method="post" class="m-5 p-5">
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select name="category" id="category" class="form-select">
+                <% categories.forEach(category => { %>
+                    <option value="<%= category._id %>"><%= category.name %></option>
+                <% }); %>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" id="title" placeholder="Enter title">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" class="form-control" id="description" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+<%- include('main_features/footer') %>
+

@@ -1,0 +1,23 @@
+<%- include('main_features/head') %>
+
+<%- include('components/alert_bar') %>
+
+<div class="container m-5 p-5">
+    <div class="m-5 p-5">
+        <% for(var i = 0; i < todos.length; i++){ %>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><%= todos[i].title %></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><%= todos[i].description %></h6>
+                  <p class="card-text">Category => <%= todos[i].category.name %></p>
+                  <a href="/web/todo-edit/<%= todos[i]._id %>" class="card-link">Edit</a> 
+                  <a href="/web/todo-delete/<%= todos[i]._id %>" class="card-link">Delete</a> 
+                </div>
+              </div>
+        <% } %>
+        
+    </div>
+    
+</div>
+
+<%- include('main_features/footer') %>
